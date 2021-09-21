@@ -1,13 +1,12 @@
 var btnTranslate = document.querySelector("#btn-translate");
 var txtInput = document.querySelector("#text-input");
-var outputDiv = document.querySelector("#text-output");
+var outputDiv = document.querySelector("#output");
 
 // var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 var serverURL = "https://api.funtranslations.com/translate/minion.json";
 
-
 function getTranslationURL(input) {
-    return serverURL + "?" + "text =" + input;
+    return serverURL + "?" + "text=" + input;
 }
 
 function errorHandler(error) {
@@ -16,7 +15,7 @@ function errorHandler(error) {
 }
 
 function clickHandler() {
-    // outputDiv.innerText = "ajsjsjsjsjs  " + txtInput.value;
+
 
     var inputText = txtInput.value; // taking input
 
