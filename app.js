@@ -1,7 +1,6 @@
 var btnTranslate = document.querySelector("#btn-translate");
 var txtInput = document.querySelector("#text-input");
 var outputDiv = document.querySelector("#output");
-
 // var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 var serverURL = "https://api.funtranslations.com/translate/minion.json";
 
@@ -11,13 +10,12 @@ function getTranslationURL(input) {
 
 function errorHandler(error) {
     console.log("error occurred", error);
-    alert("something went wrong.. please try again.")
+    alert("something went wrong.. please try again.");
 }
 
 function clickHandler() {
-
-
-    var inputText = txtInput.value; // taking input
+    // taking input
+    var inputText = txtInput.value;
 
     //calling server for processing
     fetch(getTranslationURL(inputText))
@@ -25,10 +23,8 @@ function clickHandler() {
         .then((json) => {
             var translatedText = json.contents.translated;
             outputDiv.innerText = translatedText; //output
-
-
         })
-        .catch(errorHandler)
-};
+        .catch(errorHandler);
+}
 
 btnTranslate.addEventListener("click", clickHandler);
